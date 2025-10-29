@@ -65,7 +65,7 @@ header{
     display: flex;
     align-items: center;
     border-bottom: 1px solid rgba(0,0,0,0.06);
-    padding: 0 var(--gutter);
+
 
     /* ★追加/修正：ヘッダーを画面に固定する設定 ★ */
     position: fixed; 
@@ -102,17 +102,17 @@ header nav li a:active {
     margin-left: 0;
 }
 .nav{
-    margin-left: auto;
+    margin: 0 0 0 auto;
 }
 nav{
     display:flex;
     gap:10px;
     align-items:center;
     gap: 50px;
-    margin-right: 19px;
 }
 nav li{
     list-style: none;
+    padding: 0 15px 0 15px;
 }
 nav li a img{
     width: 28px;
@@ -486,8 +486,8 @@ img, iframe, video{
         font-size: 22px;
     }
     .top_bottun{
-        width: 96px;
-        height: 36px;
+width: 86px;
+    height: 37px;
     }
     nav li a img{
         width: 24px;
