@@ -195,23 +195,14 @@ background-position: 313px -100px;
 }
 /* 白い帯 */
 .main-visual_panel {
-    position: absolute;
-    bottom: -106%;
-    left: -24%;
-    width: 100%;
-    height: 68%;
-    background: #fff;
-    transform: rotate(17deg);
-    transform-origin: left bottom;
-    z-index: 2;
+
 }
 
 /* テキスト */
 .main-visual_content {
 position: absolute;
-top: -717px;
-  left: 32px;
-  transform: translate(-50%, -50%) rotate(-17deg) scale(50%);
+top: 319px;
+  left: -114px;
   text-align: center;
   z-index: 3;
   padding-bottom: 7%;
@@ -221,7 +212,7 @@ top: -717px;
 }
 h1{
     background-image: url(../../img/mainBisual_neon.png);
-    width: 400px;
+    width: 204px;
     height: 349px;
     background-size: contain;
     background-repeat: no-repeat;
@@ -592,7 +583,7 @@ h2::after {
     /* liを中央寄せに修正 */
     justify-content: center; 
     align-items: center; 
-    margin-bottom: 15px;
+    margin-bottom: 50px;
     font-size: 2.0em; /* テキストサイズを維持 */
 }
 
