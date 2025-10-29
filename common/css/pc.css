@@ -1,0 +1,849 @@
+*{
+    font-family: "Zen Old Mincho", "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+    font-size: 16px;
+    margin: 0 auto;    /* 中央に配置 */
+    box-sizing: border-box;
+    line-height: 1.5;
+    color: #555;
+}
+/* ================================== */
+/* ページ全体の背景設定 (pc.cssなどに記述) */
+/* ================================== */
+
+body {
+    /* 背景画像の指定 (実際のファイルパスに修正してください) */
+    background-image: url(../../img/backgroumd_neon.png);
+    /* 背景画像を画面全体に広げる */
+    background-size: cover;
+    /* 画像をスクロールさせず、画面に固定する (重要) */
+    background-attachment: fixed;
+    /* 画像が画面サイズに対してリピートしないように設定 */
+    background-repeat: no-repeat;
+    /* 背景画像の開始位置を中央に設定 */
+    background-position: center center;
+}
+
+/* ================================== */
+/* コンテンツセクションの背景を白くする */
+/* ================================== */
+
+/* メインコンテンツ内の各セクションを対象にする */
+/* GALLERYセクションは背景が透過している画像などで構成されている想定 */
+.main_bisual,
+.profile,
+.tag,
+.links,
+.message,
+footer,
+header {
+    /* 背景色を白または半透明の白にする */
+    background-color: white;
+    /* または半透明の白: background-color: rgba(255, 255, 255, 0.95); */
+
+    /* 必要に応じてパディングを設定 */
+    padding: 60px 0;
+}
+
+header {
+    background-color: rgba(255,255,255,0.9); /* 背景色を維持 */
+    /* ヘッダー全体にパディングを設定し、高さを決める */
+    height: 56px;
+    padding: 0;
+    width: 100%;
+    /* ★追加/修正：ヘッダーを画面に固定する設定 ★ */
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 100; /* 他の要素より手前に表示 */
+
+}
+
+/* ★補足: header内のコンテンツを中央に配置するためのFlexbox調整★ */
+header > div {
+    display: flex; /* 子要素 (ロゴとナビ) を横並びにする */
+    flex-direction: row;
+    align-items: center; /* 垂直方向の中央揃え */
+    max-width: 100%; /* 必要に応じて最大幅を設定 */
+    padding: 0 4%; /* 左右の余白はここで設定 */
+    margin: 0 auto;
+    width: 100%;
+
+
+}
+/* ナビゲーション (nav) */
+nav ul{
+    display: flex;
+    flex-direction: row;
+    height: 50px; /* ナビゲーションの高さを固定 */
+    list-style: none; /* (ul/olを使用していないため効果はありませんが、liには通常ul/olが必要です) */
+    padding: 0;
+    margin: 0;
+    justify-content: flex-end;
+    gap: 5%;
+}
+.nav{
+width: 100%;
+  justify-content: flex-end;
+  display: flex;
+  margin-right: 0;
+}
+
+/* リストアイテム (li) */
+nav ul li {
+    height: 50px; /* navの高さに合わせる */
+    
+    /* liをアイコンサイズに合わせて縮める（重要） */
+    width: auto; 
+    
+    /* アイコン間の横方向の隙間を設定 */
+    margin-left: 15px; 
+}
+
+/* リンク (a) - liの中にaタグがある場合 */
+nav ul li a {
+    /* リンク要素をブロック化し、liのサイズに合わせる */
+    display: block; 
+
+    height: 50px; /* liの高さに合わせる */
+}
+
+/* 画像 (img) */
+nav ul li a img { /* 修正: imgのセレクタをより具体的に指定 */
+    width: 69%; /* 親要素(aタグ)の幅いっぱい（50px）に広げる */
+    height: 100%; /* 親要素(aタグ)の高さいっぱい（50px）に広げる */
+    
+    /* 画像の比率を維持しつつ、コンテナに収まるようにする */
+    object-fit: contain; 
+    display: block;
+}
+.top_bottun{
+    background-image: url(../../img/ネームロゴ拡大.png);
+    background-repeat: no-repeat;
+    height: 90%;
+    width: 200px;
+    background-size: 65px;
+    margin: 0 auto;
+    background-position: center;
+    margin-left: -76px;
+}
+
+.top_bottun {
+ /* 以下の幅と高さを確認し、必要なら調整 */
+    width: 200px;
+ height: 50px; /* navの高さに合わせる */
+ margin: 0; /* マージンをリセット */
+}
+
+.top_bottun a {
+    display: block; /* aタグをdivいっぱいに広げる */
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+a{
+    text-decoration: none;
+}img{
+    max-width: 100%;    /* 横幅を画面サイズ以下に制限 */
+    height: auto;       /* 縦横比を維持しながら高さを自動調整 */
+    display: block;     /* 画像をブロック要素として扱い、隙間をなくす */
+}
+iframe{
+    max-width: 100%;      /* 画面幅に合わせてレスポンシブ対応 */
+    display: block;       /* ブロック要素として扱う */
+    margin: 0 auto;       /* 左右の余白を自動にして中央揃え */
+    height: auto;
+    display: block;     /* 画像をブロック要素として扱い、隙間をなくす */
+    border: none;
+}
+main{
+    transform: translateY(50px);
+}
+.main_bisual {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9; /* 画像比率を固定 */
+    overflow: hidden;
+}
+
+/* 背景画像 */
+.main-visual_image {
+    position: absolute;
+    inset: 0;
+    background: url("../../img/mainbi.png") center/cover no-repeat;
+    z-index: 1;
+background-position: 313px -100px;
+  background-size: 100%;
+}
+
+
+/* フォントサイズも比率指定 */
+.main-visual_content h1 {
+    font-size: 15vw;   /* ← 画面幅の比率で拡縮 */
+    color: #333;
+}
+.main-visual_content h1 div:nth-child(2){
+    font-size: 10vw;   /* ← 画面幅の比率で拡縮 */
+}
+.main-visual_content p {
+    font-size: 2vw;
+    color: #333;
+}
+/* 白い帯 */
+.main-visual_panel {
+    position: absolute;
+    bottom: -106%;
+    left: -24%;
+    width: 100%;
+    height: 68%;
+    background: #fff;
+    transform: rotate(17deg);
+    transform-origin: left bottom;
+    z-index: 2;
+}
+
+/* テキスト */
+.main-visual_content {
+position: absolute;
+top: -717px;
+  left: 32px;
+  transform: translate(-50%, -50%) rotate(-17deg) scale(50%);
+  text-align: center;
+  z-index: 3;
+  padding-bottom: 7%;
+  margin-left: 10%;
+  width: 410px;
+  padding-right: 100px;
+}
+h1{
+    background-image: url(../../img/mainBisual_neon.png);
+    width: 400px;
+    height: 349px;
+    background-size: contain;
+    background-repeat: no-repeat;
+
+    text-indent: 100%; /* テキストを大きく右にずらす */
+    white-space: nowrap; /* テキストが折り返さないようにする */
+    overflow: hidden; /* 右にずらしたテキストを要素からはみ出さないように隠す */
+}
+.title{
+    font-size: 32px;
+    text-align: center;
+    padding: 160px 0 100px 0;
+}
+
+h2 {
+    position: relative; /* 疑似要素の位置の基準とする */
+    padding-bottom: 10px;
+}
+.aiue{
+    padding: 0;
+}
+
+h2::after {
+    content: ""; /* 必須 */
+    display: block;
+    width: 83px; /* 線の幅 */
+    height: 1.5px; /* 線の太さ */
+    background-color: #333; /* 線の色 */
+    margin: 26px auto 0; /* 中央揃えにする（auto）*/
+}
+.profile .containar{
+    display: flex;
+    flex-direction: row;
+}
+.profile .containar div:nth-child(1){
+    width: 50%;
+    margin-left: 10%;
+}
+.profile .containar div:nth-child(2){
+    margin-top: 86px;
+    line-height: 2;
+}
+.profile> div >div >div >h3{
+    background-image: url(../../img/profile_neon.png);
+    width: 284px;
+    height: 89px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-top: 183px;
+
+    text-indent: 300%; /* テキストを大きく右にずらす */
+    white-space: nowrap; /* テキストが折り返さないようにする */
+    overflow: hidden; /* 右にずらしたテキストを要素からはみ出さないように隠す */
+}
+.profile_img{
+    margin-right: 5%;
+}
+
+
+/* -------------------------------------- */
+/* 全体を横並びにするコンテナ */
+/* -------------------------------------- */
+.details-container {
+    display: flex; /* 子要素（.detail-group）を横並びにする */
+    justify-content: space-between; /* 子要素間に均等なスペースを空ける */
+    max-width: 100%; /* 必要に応じて最大幅を設定 */
+    margin: 100px 0 0 0;
+    padding: 0 5%;
+}
+
+/* 各グループ（特徴、好き、嫌い）のコンテナ */
+.details-detail-group {
+  width: 30%; /* 3要素がほぼ均等に幅を持つように調整 */
+}
+
+/* -------------------------------------- */
+/* 見出し（h3）のスタイル */
+/* -------------------------------------- */
+.detail-group h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+    margin-top: 0;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #333;
+    letter-spacing: 0.05em;
+  text-align: center; /* 見出しを中央に寄せる */
+}
+
+/* -------------------------------------- */
+/* リスト（ul.flex）のスタイル */
+/* -------------------------------------- */
+.flex {
+    display: block;
+    list-style: none;
+    margin: 15px 0 0; /* 上に少し間隔を空ける */
+    padding: 0;
+}
+
+/* 各リスト項目（li）のスタイル */
+.flex li {
+    padding: 8px 0;
+    line-height: 1.4;
+  /* 画像通りに、リスト項目を薄い線で区切る */
+    border-bottom: 1px solid #ccc;
+    color: #555;
+}
+
+/* -------------------------------------- */
+/* アイコン要素のスタイル (Google Icons用) */
+/* -------------------------------------- */
+.flex li .icon {
+    font-size: 18px;
+    line-height: 1;
+    display: inline-block;
+    width: 25px;
+    text-align: center;
+    color: #A0C4FF; /* アイコンの色 */
+    margin-right: 5px; /* アイコンとテキストの間隔を少し狭める */
+    vertical-align: middle;
+}
+
+/* リストの最後の項目から区切り線を消す */
+.flex li:last-child {
+    border-bottom: none;
+}
+
+.details-detail-group >h3{
+    font-size: 2rem;
+}
+
+/* -------------------------------------- */
+/* タグリスト全体のスタイル */
+/* -------------------------------------- */
+.tag-list {
+    display: flex; /* タグを横並びにする */
+    justify-content: center; /* リスト全体を中央揃えにする */
+    list-style: none; /* リストマーカーを消す */
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap; /* タグが多くなったら折り返す */
+    gap: 10px; /* タグ間の縦横のスペース */
+}
+
+/* -------------------------------------- */
+/* 各タグ（li > a）のスタイル */
+/* -------------------------------------- */
+.tag-list li {
+    margin: 0; /* li自体のマージンをリセット */
+    padding: 0;
+    padding-left: 52px;
+    transform: translateX(-34px);
+}
+.highlight{
+    background-color: rgba(104, 135, 211, 0.28);
+}
+
+/* タグリンクのスタイル（ボタン風） */
+.tag-list a {
+    display: block; /* リンク全体をボタンとして機能させる */
+    text-decoration: none;
+    font-size: 0.9em;
+    color: #555; /* テキストの色 */
+    border: 1px solid #ccc; /* 細い枠線 */
+    padding: 8px 15px; /* ボタンの内側の余白 */
+    border-radius: 20px; /* 角を丸くする */
+    transition: all 0.3s ease; /* ホバー時のアニメーション */
+}
+
+.whitetext::after {
+    content: "";
+    display: block;
+    width: 83px;
+    height: 1.5px;
+    background-color: #ffffff;
+    margin: 26px auto 0;
+}
+
+.gallery> .whitetext, .gallery> .whitetext::after{
+    color: #fff;
+}
+/* GALLERYセクションの直前にあるTAGセクション */
+.tag {
+    /* 疑似要素が効くように基準点を設定 */
+    position: relative;
+    /* 白背景を維持 */
+    background-color: white; 
+    /* z-indexで他の要素の上に配置（念のため） */
+    z-index: 10;
+    /* 傾斜をつける分、下に余白を追加（調整が必要） */
+    padding-bottom: 80px; 
+}
+
+/* TAGセクションの下辺の傾斜を修正 */
+.tag::after {
+    content: "";
+
+    width: 100%;
+    
+    /* 画面左端から開始（この設定も重要） */
+    left: 50%;
+    transform: translateX(-50%) skewY(-3deg); 
+    /* ↑ transform-origin: 0 100%; の代わりに、中央を基準に傾斜させることで、左右の途切れを防ぎます。*/
+    
+    /* ... (その他の設定は維持) ... */
+    position: absolute;
+    bottom: -50px; 
+    height: 100px; 
+    background-color: white;
+    /* transform: skewY(-3deg); <-- 旧設定は削除またはコメントアウト */
+    /* transform-origin: 0 100%; <-- 旧設定は削除またはコメントアウト */
+    z-index: 2; 
+}
+/* TAGセクション全体の設定 */
+.tag {
+    position: relative;
+    /* ★修正点 2: 疑似要素よりも手前にコンテンツを配置 (例: 3) ★ */
+    z-index: 3; 
+    
+    /* ... (その他の設定は維持) ... */
+}
+/* TAGセクション全体の設定 */
+.tag {
+    /* ... (その他の設定は維持) ... */
+    
+    /* ★修正点 3: 傾斜の高さ分を考慮し、padding-bottomを増やす (例: 120px) ★ */
+    padding-bottom: 189px; 
+}
+
+
+
+
+.slick-list {
+    /* Slickが自動で設定する左右のパディングを0にする */
+    padding: 0 0;
+}
+/* GALLERYセクション自体のはみ出し制御 */
+.gallery {
+    /* コンテンツがセクションの境界からはみ出さないようにする */
+    overflow: hidden;
+    height: 1000px;
+
+    /* 他のスタイル (position: relative; z-index: 4; など) はそのまま維持 */
+}
+
+
+/* ================================== */
+/* LINKSセクション全体のコンテナ設定 */
+/* ================================== */
+
+
+.links_item {
+    /* (以前のCSSでbackground-color: white; や padding: XXpx; が設定されていることを前提とします) */
+
+    /* 3つの子要素 (div) を横並びにする */
+    display: flex;
+    gap: 22px; /* グループ間の間隔 */
+    margin: 40px auto;
+    max-width: 30%; /* セクションの最大幅 */
+    flex-direction: column;
+}
+
+/* 各リンクグループ（div） */
+.links_item > div {
+    flex-basis: 30%; /* 3つのグループが均等な幅を占めるように設定 */
+    text-align: center;
+}
+
+/* グループのタイトル（H3） */
+.links_item h3 {
+    font-size: 1.8em;
+    margin-bottom: 25px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #333; /* タイトルの下に細い線 */
+    display: inline-block; /* 線をタイトルの幅に合わせる */
+}
+
+/* リスト（ul）とリスト項目（li） */
+.links_item ul {
+    list-style: none; /* デフォルトの黒点を削除 */
+    padding: 0;
+}
+
+.links_item li {
+    display: flex; /* アイコンとテキストを横並びにする */
+    align-items: center; /* 垂直方向の中央揃え */
+    margin-bottom: 15px;
+    font-size: 2.0em;
+}
+.links_item li img{
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+/* アイコン (HTMLの <span class="icon"></span> ) のスタイル
+.links_item .icon {
+    display: inline-block;
+    width: 24px;  /* アイコンの幅 */
+    /* height: 24px;
+    margin-right: 10px; */
+
+    /* ★カスタムアイコンの代わりに仮のスタイルを適用★
+    background-color: #555; /* 仮のアイコン色
+    border-radius: 50%; /* 仮の丸いアイコン
+    flex-shrink: 0; /* テキストが長くなってもアイコンの幅を維持 */
+/* } */
+.links_item .icon {
+    max-width: 100%;
+    height: auto;
+}
+.links_group{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+}
+.twitch a{
+    margin-bottom: 86px;
+}
+.mashumaro{
+    transform: translateX(-15px);
+}
+.tiktok{
+    transform: translate(-10px,24px);
+}
+.x{
+    margin-bottom: 32px;
+}
+
+
+
+/* ============================================================== */
+/* 1. LINKSセクション全体とグループの横並び設定 */
+/* ============================================================== */
+
+/* .links_groupを横並びの親として使用 */
+.links_group {
+    display: flex;
+    justify-content: center; /* 3つのグループを中央に寄せる */
+    gap: 50px; /* グループ間の間隔を確保 */
+    max-width: 1200px; /* セクションの最大幅を設定 */
+    margin: 0px auto;
+}
+
+/* 各グループ (.links_item) は均等幅を占め、縦並び設定を削除 */
+.links_item {
+    flex: 1; /* 均等な幅を占める */
+    text-align: center;
+    /* ❌ 削除: flex-direction: column; */
+    /* ❌ 削除: max-width: 30%; */ 
+}
+
+/* ============================================================== */
+/* 2. リストと画像のサイズ調整（アイコンサイズが合わない問題を解決） */
+/* ============================================================== */
+
+.links_item ul {
+    list-style: none;
+    padding: 0;
+}
+
+.links_item li {
+    display: flex;
+    /* liを中央寄せに修正 */
+    justify-content: center; 
+    align-items: center; 
+    margin-bottom: 15px;
+    font-size: 2.0em; /* テキストサイズを維持 */
+}
+
+/* ★★★ 画像を囲む a タグにサイズを強制 ★★★ */
+.links_item li a {
+    /* アイコン全体を表示したい固定の幅と高さを設定 */
+    width: 86%; /* ★アイコンの統一サイズ (例: 60px) */
+    height: auto;
+
+    /* li内のアイテムとして配置 */
+    display: block; 
+    margin-right: 15px; /* テキストとの間に隙間 */
+    flex-shrink: 0; /* 幅が縮まないように固定 */
+}
+
+/* ★★★ 画像自体を a タグいっぱいに広げる ★★★ */
+.links_item li img{
+    /* 親要素 (aタグ) の幅いっぱいに広げる */
+    width: 100%; 
+    height: 100%; 
+    
+    /* 縦横比を保ちつつコンテナを埋め尽くす（画像が切れる可能性あり） */
+    object-fit: cover; 
+    
+    display: block;
+}
+
+
+
+.message{
+    padding: 0;
+}
+.message p{
+    text-align: center;
+    display: block;
+    background-image: url(../../img/透過neonSIGN_gray.PNG);
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 500px;
+    background-position: 70% 68px;
+    background-size: 400px auto;
+    padding-top: 76px;
+}
+
+footer{
+text-align: center;
+  background-color: #E8E4E6;
+  padding: 60px 0 0 0;
+  display: block;
+  padding-bottom: 9px;
+}
+footer small{
+    letter-spacing: 12px;
+}
+
+
+
+
+a{
+        transition: all 0.5s ease;
+}
+a:hover {
+    /* 大きくするエフェクトを画像に直接適用 */
+    transform: scale(1.1); 
+    /* 透過度も変更 */
+    opacity: 0.8;
+}
+
+nav li a img { 
+    width: 69%; 
+    height: 100%; 
+    object-fit: contain; 
+    display: block;
+    
+    /* ホバーを滑らかにする設定 */
+    transition: all 0.3s ease;
+    
+    /* 画像を中央に配置するための調整 */
+    margin: 0 auto; 
+}
+
+/* ★★★ ホバーが効くための必須設定 ★★★ */
+nav li a:hover img {
+    /* 大きくするエフェクトを画像に直接適用 */
+    transform: scale(1.1); 
+    /* 透過度も変更 */
+    opacity: 0.8;
+}
+
+
+/* ================================== */
+/* スクロールアニメーション用CSS (h2に確実に適用) */
+/* ================================== */
+
+/* ★修正: .title かつ .fadein の要素に確実に適用する★ */
+.title.fadein {
+    opacity: 0; /* ★これが最も重要。確実に透明にすること。★ */
+    transform: translateY(20px); 
+    transition: opacity 1.0s ease, transform 1.0s ease; 
+}
+
+.title.fadein.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 横スクロール発生防止 */
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* はみ出し防止 */
+.main-visual_panel,
+.main-visual_content,
+.tag::after {
+  max-width: 100%;
+}
+
+/* vw指定を%に補正 */
+.tag::after {
+  width: 100%;
+}
+
+/* ================================== */
+/* 横スクロール＆フッター欠け防止用 */
+/* ================================== */
+
+html, body {
+  overflow-x: hidden !important;
+  width: 100%;
+  max-width: 100%;
+}
+
+.tag::after {
+  width: 100% !important;
+}
+
+.tag,
+.main_bisual,
+.main-visual_panel {
+  overflow: hidden;
+  max-width: 100%;
+}
+
+main {
+  transform: none;
+  margin-top: 50px; /* ヘッダー高さ分を確保 */
+}
+
+/* ===========================================================
+   Chrome の 100vw はスクロールバーを含むため横スクロールが出る対策
+=========================================================== */
+
+/* 1. HTML・BODYを確実に固定幅にする */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 2. 100vw → 実質的に 100% に補正 */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Chromeが描画領域外を計算しないように強制マスク */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -9999;
+  overflow-x: hidden;
+}
+
+/* 3. transformによる高さ崩れを完全に除去 */
+main {
+  transform: none !important;
+  margin-top: 56px; /* header高さ分 */
+}
+
+/* 4. 回転・傾斜で外にはみ出す要素をマスク */
+.main_bisual,
+.main-visual_panel,
+.tag {
+  overflow: clip; /* Chrome 122+ の最適解 */
+  overflow-x: hidden;
+}
+
+/* 5. width:100vw の指定を無効化（Chrome限定ハック） */
+@supports (-webkit-touch-callout: none) {
+  .tag::after {
+    width: 100% !important;
+  }
+}
+
+/* ==========================================
+   デプロイ環境（iframeラップ対策）
+   Chrome実行時の横スクロール防止
+========================================== */
+
+/* すべての余白を完全にカット */
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* bodyの右端に余白を作るブラウザ差対策 */
+body {
+  position: relative;
+  left: 0;
+  right: 0;
+  overscroll-behavior-x: none;
+}
+
+/* 回転やスキューで飛び出すものを確実にマスク */
+.main_bisual,
+.main-visual_panel,
+.tag,
+.tag::after,
+.gallery {
+  overflow: clip;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+}
+
+/* 100vw対策 */
+.tag::after {
+  width: 100% !important;
+}
+
+/* Safari/Chrome両対応ハック */
+@supports (-webkit-touch-callout: none) {
+  html, body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden !important;
+  }
+}
+
+/* footer位置崩れの再補正 */
+main {
+  transform: none !important;
+  margin-top: 56px; /* header高さ分確保 */
+}
+
+
