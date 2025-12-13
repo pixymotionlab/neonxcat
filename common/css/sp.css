@@ -140,18 +140,18 @@ nav li a img{
 .main-visual_image{
     position: absolute;
     inset: 0;
-    background-image: url(../../img/mainbi.png);
+    background: url("../../img/mainhonmono.png") center/cover no-repeat;
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
     z-index: 1;
     filter: brightness(0.9);
-background-position-x: -22px;
-  background-size: 328%;
+background-position-x: 55%;
+background-size: 476%;
 }
 .main-visual_panel{
     position: absolute;
-    bottom: 10%;
+    bottom: -12%;
     left: 5%;
     width: 90%;
     height: 32%;
