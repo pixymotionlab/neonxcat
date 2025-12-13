@@ -174,9 +174,8 @@ main{
 .main-visual_image {
     position: absolute;
     inset: 0;
-    background: url("../../img/mainbi.png") center/cover no-repeat;
+    background: url("../../img/mainhonmono.png") center/cover no-repeat;
     z-index: 1;
-background-position: 313px -100px;
   background-size: 100%;
 }
 
@@ -249,7 +248,7 @@ h2::after {
 }
 .profile .containar div:nth-child(1){
     width: 50%;
-    margin-left: 10%;
+    margin-left: 17%;
 }
 .profile .containar div:nth-child(2){
     margin-top: 86px;
@@ -268,7 +267,10 @@ h2::after {
     overflow: hidden; /* 右にずらしたテキストを要素からはみ出さないように隠す */
 }
 .profile_img{
-    margin-right: 5%;
+  margin-right: 14%;
+}
+#proga{
+      width: 700px;
 }
 
 
@@ -462,7 +464,9 @@ h2::after {
 /* ================================== */
 /* LINKSセクション全体のコンテナ設定 */
 /* ================================== */
-
+.links{
+    padding-bottom: 0;
+}
 
 .links_item {
     /* (以前のCSSでbackground-color: white; や padding: XXpx; が設定されていることを前提とします) */
@@ -536,6 +540,11 @@ h2::after {
 .twitch a{
     margin-bottom: 86px;
 }
+.twitch{
+    transform: translateY(26px);
+  margin-bottom: 0;
+  height: 200px
+}
 .mashumaro{
     transform: translateX(-15px);
 }
@@ -545,7 +554,9 @@ h2::after {
 .x{
     margin-bottom: 32px;
 }
-
+#mashu{
+    transform: translateY(-56px);
+}
 
 
 /* ============================================================== */
