@@ -28,6 +28,7 @@
             <li><a href="https://www.twitch.tv/neon_x_cat"><img class="icon" src="img/SNS/glitch_flat_black-ops.png" alt="Twitch"></a></li>
             <li><a href="https://www.youtube.com/@neonxcat"><img class="icon" src="img/SNS/yt_logo_pms_mono_light.png" alt="YouTube"></a></li>
             <li><a href="https://x.com/neonxcat"><img class="icon x" src="img/SNS/logo-black.png" alt="X"></a></li>
+            <li id="st"><a href="streamer.html">配信者様へ</a></li>
             </ul>
         </nav>
     </div>
@@ -53,7 +54,7 @@
     <div class="containar">
         <div>
             <div>
-                <h3 class="none">紡音</h3>
+                <h3 class="none neonnamae">紡音</h3>
             </div>
             <div class="marR">ご主人さまを見つけるために、紡音はVtuberになった。<br>
                 リスナーは「主（ぬし）」であり、紡音が飼われたい相手。<br>
@@ -66,6 +67,9 @@
             <img id="proga" src="img/neonPRO.png" alt="プロフィール画像">
         </div>
     </div>
+
+<div class="topback_container">
+
     <div class= "details-container">
         <div class= "details-detail-group">
             <h3>特徴</h3>
@@ -96,6 +100,28 @@
         </div>
     </div>
 </section>
+
+    <section id="stream" class="stream">
+    <div class="row">
+            <div id="haisinnituite">
+                <h3>配信について</h3>
+            </div>
+            <div>
+                <p>配信日<span> ▷ ほぼ毎日※おやすみの日はXにてポストします</span></p>
+                <p>時間<span> ▷ 22:30頃～</span></p>
+                <p>内容<span> ▷ ソロゲーor雑談/たまにコラボ（告知あり）/たまに視聴者参加型</span></p>
+                <p>場所<span> ▷ <a href="https://www.twitch.tv/neon_x_cat"> twitch</a></span></p>
+                <h4>視聴者参加型について</h4>
+                人数制限がある場合、ファンクラブ/Twitchサブスクの方を優先させていただきます<br>
+                募集は紡音の<a href="https://discord.gg/pu5zZuD6jm">Discord鯖</a>内にて<br>
+                Discord内サブスク限定スレ▷Discord内紡音のゲーム募集スレ▷Xで募集します<br>
+                ※全ての募集がその限りではありませんのでご了承ください
+            </div>
+    </div>
+    </section>
+
+<div class="bunner"><a href="https://raidori.com/@neonxcat"><img src="img/raidori.png" alt="ライドリ紡音ファンクラブ"></a></div>
+
 <section class="tag">
         <h2 class="title fadein">TAGS＆COMMUNITY</h2>
     <ul class="tag-list">
@@ -106,6 +132,7 @@
         <li>切り抜き/クリップ：<span class="highlight">#ねおん成長記録</span></li>
     </ul>
 </section>
+
 <section class="gallery">
     <h2 class="title whitetext fadein">GALLERY</h2>
     <div class="gallery_item">
@@ -141,6 +168,8 @@
         <div class="links_item">
         <h3>OTHERS</h3>
         <ul class="column">
+            <li><a href="https://raidori.com/@neonxcat"><img class="icon" src="img/raidori.png" alt="raidori"></a></li>
+            <li><a href="https://neonxcat.booth.pm/"><img class="icon" src="img/BOOTH.png" alt="BOOTH"></a></li>
             <li><a href="https://gi-pt.com/main/wishlist/fan-view/3a1d3a12-c81c-36e1-a6bb-fc8dd715dfb8"><img class="icon" src="img/SNS/wishlist_large_01.png" alt="Gipt"></a></li>
             <li><a href="https://discord.gg/FzjkXA2G"><img class="icon" src="img/SNS/Discord-Logo-Black.png" alt="Discord"></a></li>
 
@@ -148,11 +177,18 @@
     </div>
     </div>
 </section>
+
+
+
 <section class="message">
     <h2 class="title fadein">MESSAGE</h2>
     <p>「気まぐれで手がかかるけど、それでも飼える？」</p>
 </section>
+
 </main>
+
+
+
 <footer><small>©NEON VTuber</small></footer>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -220,10 +256,31 @@ $(document).ready(function(){
         fadeAnime();
     });
 
+
+// TOPbottun
+    const button = document.querySelector('.page-top');
+
+button.addEventListener('click', () => {
+  window.scroll({ 
+    top: 0, 
+    behavior: "smooth"
+  });
+});
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 100){
+    button.classList.add('is-active');
+  }else{
+    button.classList.remove('is-active');
+  }
+});
+
 });
 </script>
 
 
 
 </body>
+<button class="page-top topback_button">TOP</button>
+</div>
 </html>
