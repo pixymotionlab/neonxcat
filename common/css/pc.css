@@ -130,6 +130,9 @@ width: 100%;
 }
 
 /* リストアイテム (li) */
+nav{
+    width: 70%;
+}
 nav ul li {
     height: 50px; /* navの高さに合わせる */
     
@@ -150,7 +153,7 @@ nav ul li a {
 
 /* 画像 (img) */
 nav ul li a img { /* 修正: imgのセレクタをより具体的に指定 */
-    width: 69%; /* 親要素(aタグ)の幅いっぱい（50px）に広げる */
+    width: 30px;; /* 親要素(aタグ)の幅いっぱい（50px）に広げる */
     height: 100%; /* 親要素(aタグ)の高さいっぱい（50px）に広げる */
     
     /* 画像の比率を維持しつつ、コンテナに収まるようにする */
@@ -741,7 +744,7 @@ footer small{
 
 
 a{
-    padding-bottom: 2rem;    transition: all 0.5s ease;
+    transition: all 0.5s ease;
 }
 a:hover {
     /* 大きくするエフェクトを画像に直接適用 */
@@ -781,7 +784,7 @@ nav li a:hover img {
 
 }
 .bunner a{
-        width: 70%;
+        width: 50%;
         margin: 0 auto;
     }
 .bunner img{
