@@ -49,6 +49,42 @@ main > section{
     box-shadow: none;
 }
 
+/* TOPbotan */
+.topback_container {
+  height: auto;
+  padding: 50px 0;
+  z-index: 1000;
+}
+
+.topback_button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  font-size: 16px;
+  padding-top: 6px;
+  font-weight: bold;
+  color: #333;
+  background: #FFF;
+  border: 1px solid #333;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s;
+  box-shadow: 3px 3px 0px 0px #333;
+  letter-spacing: 1px;
+  z-index: 9999;
+}
+
+.topback_button.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
 /* ----------------------------------------------------------
    HEADER
 ---------------------------------------------------------- */
@@ -226,6 +262,52 @@ h2::after {
     display: block;
 }
 
+/* ----------------------------------------------------------
+   STREAM
+---------------------------------------------------------- */
+
+.stream{
+    margin: 0 auto;
+    padding-top: 0;
+}
+
+.row div{
+    margin: 0 auto;
+}
+.stream h4{
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.stream a{
+    color: blueviolet;
+    text-decoration: underline;
+}
+.stream div{
+    line-height: 2.2
+}
+.stream p{
+    padding: 5px;
+}
+.stream h3{
+    font-size: 2rem;
+}
+#haisinnituite{
+    display: block;
+    margin: auto 0 auto auto;
+}
+#st{
+    display: block;
+    padding-top: 4px;
+    width: 86px;
+    font-size: 0.7rem;
+}
+#st a,
+#st a:visited,
+#st a:hover,
+#st a:active {
+    color: #333;
+    text-decoration: none;
+    }
 /* ----------------------------------------------------------
    DETAILS
 ---------------------------------------------------------- */
@@ -507,7 +589,22 @@ width: 86px;
 .marR{
     margin-left: 3%;
 }
+.bunner{
+    background-color: #FFF;
+    margin: 0 auto;
+    padding-top: 3rem;
+    display: flex;
+    height: auto;
 
+}
+.bunner a{
+        width: 70%;
+        margin: 0 auto;
+    }
+.bunner img{
+    margin: 0 auto;
+
+}
 
 /* ================================== */
 /* スクロールアニメーション用CSS (h2に確実に適用) */
@@ -523,4 +620,34 @@ width: 86px;
 .title.fadein.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* ==========================================
+   配信者様へページ
+========================================== */
+.streamer{
+    margin: 0 auto;
+    padding: 3rem 10% 6rem 10%;
+
+}
+.streamer h1{
+    font-size: 2rem;
+    height: 221px;
+        display: none;
+
+}
+.streamer h2{
+    font-size: 1.5rem;
+        text-align: center;
+    margin-top: 20px;
+}
+.streamer h3{
+    font-size: 1.2rem;
+}
+.streamer h1,h2,h3,h4{
+    margin-top: 10px;
+}
+.streamer a{
+    color: violet;
+    text-decoration: underline;
 }

@@ -31,11 +31,14 @@ body {
 /* GALLERYセクションは背景が透過している画像などで構成されている想定 */
 .main_bisual,
 .profile,
+.stream,
 .tag,
 .links,
 .message,
 footer,
-header {
+header,
+.streamer
+ {
     /* 背景色を白または半透明の白にする */
     background-color: white;
     /* または半透明の白: background-color: rgba(255, 255, 255, 0.95); */
@@ -43,6 +46,42 @@ header {
     /* 必要に応じてパディングを設定 */
     padding: 60px 0;
 }
+
+/* TOPbotan */
+.topback_container {
+  height: auto;
+  padding: 50px 0;
+  z-index: 1000;
+}
+
+.topback_button {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  font-size: 16px;
+  padding-top: 6px;
+  font-weight: bold;
+  color: #333;
+  background: #FFF;
+  border: 1px solid #333;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: .2s;
+  box-shadow: 3px 3px 0px 0px #333;
+  letter-spacing: 1px;
+}
+
+.topback_button.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
 
 header {
     background-color: rgba(255,255,255,0.9); /* 背景色を維持 */
@@ -242,6 +281,9 @@ h2::after {
     background-color: #333; /* 線の色 */
     margin: 26px auto 0; /* 中央揃えにする（auto）*/
 }
+.profile{
+    padding-top: 180px;
+}
 .profile .containar{
     display: flex;
     flex-direction: row;
@@ -254,7 +296,7 @@ h2::after {
     margin-top: 86px;
     line-height: 2;
 }
-.profile> div >div >div >h3{
+.neonnamae{
     background-image: url(../../img/profile_neon.png);
     width: 284px;
     height: 89px;
@@ -271,6 +313,53 @@ h2::after {
 }
 #proga{
       width: 700px;
+}
+
+/* 配信についてSTREAM */
+
+.stream{
+    margin: 0 auto;
+    padding-top: 60px;
+}
+.row{
+    display: flex;
+    flex-direction: row;
+}
+.row div{
+    margin: 0 auto;
+}
+.stream h4{
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+.stream a{
+    color: blueviolet;
+    text-decoration: underline;
+}
+.stream div{
+    line-height: 2.2
+}
+.stream p{
+    padding: 5px;
+}
+.stream h3{
+    font-size: 2rem;
+}
+#haisinnituite{
+    display: block;
+    margin: auto 0 auto auto;
+}
+#st{
+    display: block;
+    padding-top: 10px;
+    width: 100px;
+}
+#st a,
+#st a:visited,
+#st a:hover,
+#st a:active {
+    color: #333;
+    text-decoration: none;
 }
 
 
@@ -402,8 +491,6 @@ h2::after {
     position: relative;
     /* 白背景を維持 */
     background-color: white; 
-    /* z-indexで他の要素の上に配置（念のため） */
-    z-index: 10;
     /* 傾斜をつける分、下に余白を追加（調整が必要） */
     padding-bottom: 80px; 
 }
@@ -426,13 +513,13 @@ h2::after {
     background-color: white;
     /* transform: skewY(-3deg); <-- 旧設定は削除またはコメントアウト */
     /* transform-origin: 0 100%; <-- 旧設定は削除またはコメントアウト */
-    z-index: 2; 
+
 }
 /* TAGセクション全体の設定 */
 .tag {
     position: relative;
     /* ★修正点 2: 疑似要素よりも手前にコンテンツを配置 (例: 3) ★ */
-    z-index: 3; 
+
     
     /* ... (その他の設定は維持) ... */
 }
@@ -654,7 +741,7 @@ footer small{
 
 
 a{
-        transition: all 0.5s ease;
+    padding-bottom: 2rem;    transition: all 0.5s ease;
 }
 a:hover {
     /* 大きくするエフェクトを画像に直接適用 */
@@ -684,6 +771,23 @@ nav li a:hover img {
     opacity: 0.8;
 }
 
+.bunner{
+    background-color: #FFF;
+    margin: 0 auto;
+    padding-top: 6rem;
+    display: flex;
+    height: auto;
+    padding-bottom: 2rem;
+
+}
+.bunner a{
+        width: 70%;
+        margin: 0 auto;
+    }
+.bunner img{
+    margin: 0 auto;
+
+}
 
 /* ================================== */
 /* スクロールアニメーション用CSS (h2に確実に適用) */
@@ -849,4 +953,31 @@ main {
   margin-top: 56px; /* header高さ分確保 */
 }
 
+/* ==========================================
+   配信者様へページ
+========================================== */
+.streamer{
+    margin: 0 auto;
+    padding: 0 10% 6rem 10%;
 
+}
+.streamer h1{
+    font-size: 2rem;
+    height: 221px;
+
+}
+.streamer h2{
+    font-size: 1.5rem;
+        text-align: center;
+    margin-top: 20px;
+}
+.streamer h3{
+    font-size: 1.2rem;
+}
+.streamer h1,h2,h3,h4{
+    margin-top: 10px;
+}
+.streamer a{
+    color: violet;
+    text-decoration: underline;
+}
